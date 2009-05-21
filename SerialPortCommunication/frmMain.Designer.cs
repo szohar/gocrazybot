@@ -39,8 +39,6 @@ namespace PCComm
             this.cboStop = new System.Windows.Forms.ComboBox();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbDisplay = new System.Windows.Forms.RichTextBox();
-            this.cmdSend = new System.Windows.Forms.Button();
-            this.txtSend = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,14 +47,10 @@ namespace PCComm
             this.cboBaud = new System.Windows.Forms.ComboBox();
             this.cboPort = new System.Windows.Forms.ComboBox();
             this.cmdOpen = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,13 +59,14 @@ namespace PCComm
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label7 = new System.Windows.Forms.Label();
+            this.button_direction = new System.Windows.Forms.Button();
+            this.button_slow = new System.Windows.Forms.Button();
+            this.button_medium = new System.Windows.Forms.Button();
+            this.button_fast = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // cboData
@@ -107,7 +102,7 @@ namespace PCComm
             // 
             // cmdClose
             // 
-            this.cmdClose.Location = new System.Drawing.Point(578, 269);
+            this.cmdClose.Location = new System.Drawing.Point(231, 314);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(100, 23);
             this.cmdClose.TabIndex = 5;
@@ -119,7 +114,7 @@ namespace PCComm
             this.groupBox3.Controls.Add(this.rdoByte);
             this.groupBox3.Controls.Add(this.rdoText);
             this.groupBox3.Controls.Add(this.rdoHex);
-            this.groupBox3.Location = new System.Drawing.Point(462, 172);
+            this.groupBox3.Location = new System.Drawing.Point(231, 202);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(100, 81);
             this.groupBox3.TabIndex = 7;
@@ -176,7 +171,7 @@ namespace PCComm
             this.GroupBox1.ForeColor = System.Drawing.Color.Blue;
             this.GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(556, 123);
+            this.GroupBox1.Size = new System.Drawing.Size(421, 123);
             this.GroupBox1.TabIndex = 4;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Serial Port Communication";
@@ -186,28 +181,10 @@ namespace PCComm
             // 
             this.rtbDisplay.Location = new System.Drawing.Point(10, 16);
             this.rtbDisplay.Name = "rtbDisplay";
-            this.rtbDisplay.Size = new System.Drawing.Size(540, 96);
+            this.rtbDisplay.Size = new System.Drawing.Size(400, 96);
             this.rtbDisplay.TabIndex = 3;
             this.rtbDisplay.Text = "";
             this.rtbDisplay.TextChanged += new System.EventHandler(this.rtbDisplay_TextChanged);
-            // 
-            // cmdSend
-            // 
-            this.cmdSend.Location = new System.Drawing.Point(462, 143);
-            this.cmdSend.Name = "cmdSend";
-            this.cmdSend.Size = new System.Drawing.Size(95, 23);
-            this.cmdSend.TabIndex = 5;
-            this.cmdSend.Text = "Send";
-            this.cmdSend.UseVisualStyleBackColor = true;
-            this.cmdSend.Click += new System.EventHandler(this.cmdSend_Click);
-            // 
-            // txtSend
-            // 
-            this.txtSend.Location = new System.Drawing.Point(15, 168);
-            this.txtSend.Name = "txtSend";
-            this.txtSend.Size = new System.Drawing.Size(433, 20);
-            this.txtSend.TabIndex = 4;
-            this.txtSend.TextChanged += new System.EventHandler(this.txtSend_TextChanged);
             // 
             // groupBox2
             // 
@@ -221,7 +198,7 @@ namespace PCComm
             this.groupBox2.Controls.Add(this.cboPort);
             this.groupBox2.Controls.Add(this.cboData);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(578, 13);
+            this.groupBox2.Location = new System.Drawing.Point(337, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(96, 221);
             this.groupBox2.TabIndex = 6;
@@ -294,7 +271,7 @@ namespace PCComm
             // 
             // cmdOpen
             // 
-            this.cmdOpen.Location = new System.Drawing.Point(578, 240);
+            this.cmdOpen.Location = new System.Drawing.Point(231, 289);
             this.cmdOpen.Name = "cmdOpen";
             this.cmdOpen.Size = new System.Drawing.Size(100, 23);
             this.cmdOpen.TabIndex = 8;
@@ -302,100 +279,62 @@ namespace PCComm
             this.cmdOpen.UseVisualStyleBackColor = true;
             this.cmdOpen.Click += new System.EventHandler(this.cmdOpen_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(22, 347);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(22, 387);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(160, 308);
+            this.textBox3.Location = new System.Drawing.Point(90, 276);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(75, 20);
             this.textBox3.TabIndex = 13;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(22, 308);
+            this.textBox5.Location = new System.Drawing.Point(97, 421);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(108, 20);
+            this.textBox5.Size = new System.Drawing.Size(68, 20);
             this.textBox5.TabIndex = 15;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 241);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Speed";
-            // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(160, 387);
+            this.textBox6.Location = new System.Drawing.Point(346, 427);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(195, 20);
+            this.textBox6.Size = new System.Drawing.Size(78, 20);
             this.textBox6.TabIndex = 17;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lime;
-            this.panel1.Location = new System.Drawing.Point(578, 308);
+            this.panel1.Location = new System.Drawing.Point(74, 213);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 42);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(376, 298);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(79, 17);
-            this.checkBox2.TabIndex = 22;
-            this.checkBox2.Text = "Continuous";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 192);
+            this.label9.Location = new System.Drawing.Point(12, 152);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.Size = new System.Drawing.Size(32, 13);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Command";
-            this.label9.Click += new System.EventHandler(this.label9_Click_1);
+            this.label9.Text = "Code";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(118, 190);
+            this.label10.Location = new System.Drawing.Point(118, 152);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 24;
-            this.label10.Text = "Port5";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label10.Text = "Port Value";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(224, 192);
+            this.label11.Location = new System.Drawing.Point(224, 152);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 13);
             this.label11.TabIndex = 25;
@@ -404,7 +343,7 @@ namespace PCComm
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(330, 192);
+            this.label12.Location = new System.Drawing.Point(330, 152);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 26;
@@ -412,21 +351,21 @@ namespace PCComm
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(15, 218);
+            this.textBox9.Location = new System.Drawing.Point(12, 168);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 27;
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(121, 218);
+            this.textBox10.Location = new System.Drawing.Point(121, 168);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 28;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(227, 218);
+            this.textBox11.Location = new System.Drawing.Point(227, 168);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 29;
@@ -434,49 +373,72 @@ namespace PCComm
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(333, 218);
+            this.textBox12.Location = new System.Drawing.Point(332, 168);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 20);
             this.textBox12.TabIndex = 30;
             // 
-            // button1
+            // button_direction
             // 
-            this.button1.Location = new System.Drawing.Point(482, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 46);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Direction";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_direction.Location = new System.Drawing.Point(90, 302);
+            this.button_direction.Name = "button_direction";
+            this.button_direction.Size = new System.Drawing.Size(75, 46);
+            this.button_direction.TabIndex = 31;
+            this.button_direction.Text = "Direction";
+            this.button_direction.UseVisualStyleBackColor = true;
+            this.button_direction.Click += new System.EventHandler(this.button_direction_Click);
             // 
-            // trackBar1
+            // button_slow
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 257);
-            this.trackBar1.Maximum = 127;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(443, 45);
-            this.trackBar1.TabIndex = 10;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.button_slow.Location = new System.Drawing.Point(12, 359);
+            this.button_slow.Name = "button_slow";
+            this.button_slow.Size = new System.Drawing.Size(72, 52);
+            this.button_slow.TabIndex = 33;
+            this.button_slow.Text = "Slow";
+            this.button_slow.UseVisualStyleBackColor = true;
+            this.button_slow.Click += new System.EventHandler(this.button_slow_Click);
             // 
-            // label7
+            // button_medium
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Message";
-            this.label7.Click += new System.EventHandler(this.label7_Click_1);
+            this.button_medium.Location = new System.Drawing.Point(90, 359);
+            this.button_medium.Name = "button_medium";
+            this.button_medium.Size = new System.Drawing.Size(75, 52);
+            this.button_medium.TabIndex = 34;
+            this.button_medium.Text = "Medium";
+            this.button_medium.UseVisualStyleBackColor = true;
+            this.button_medium.Click += new System.EventHandler(this.button_medium_Click);
+            // 
+            // button_fast
+            // 
+            this.button_fast.Location = new System.Drawing.Point(171, 359);
+            this.button_fast.Name = "button_fast";
+            this.button_fast.Size = new System.Drawing.Size(72, 52);
+            this.button_fast.TabIndex = 35;
+            this.button_fast.Text = "Fast";
+            this.button_fast.UseVisualStyleBackColor = true;
+            this.button_fast.Click += new System.EventHandler(this.button_fast_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(344, 453);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Run Time";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(774, 475);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(444, 475);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button_fast);
+            this.Controls.Add(this.button_medium);
+            this.Controls.Add(this.button_slow);
+            this.Controls.Add(this.button_direction);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
@@ -485,17 +447,10 @@ namespace PCComm
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.txtSend);
-            this.Controls.Add(this.cmdSend);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.GroupBox1);
@@ -511,7 +466,6 @@ namespace PCComm
             this.GroupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,22 +482,16 @@ namespace PCComm
         private System.Windows.Forms.RadioButton rdoHex;
         private System.Windows.Forms.ComboBox cboStop;
         private System.Windows.Forms.GroupBox GroupBox1;
-        private System.Windows.Forms.Button cmdSend;
-        private System.Windows.Forms.TextBox txtSend;
         private System.Windows.Forms.RichTextBox rtbDisplay;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.ComboBox cboPort;
         private System.Windows.Forms.Button cmdOpen;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RadioButton rdoByte;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -552,13 +500,15 @@ namespace PCComm
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_direction;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboParity;
+        private System.Windows.Forms.Button button_slow;
+        private System.Windows.Forms.Button button_medium;
+        private System.Windows.Forms.Button button_fast;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboBaud;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label label7;
        
     }
 }

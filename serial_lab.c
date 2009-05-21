@@ -27,12 +27,7 @@ unsigned int command;
 unsigned int message;
 unsigned int port5;
 unsigned int outBuffer[4];
-unsigned int RPM = 0x00;
-unsigned int pulses;
-unsigned int actual_speed;
-int time_in_sec;
 int i, count, random;
-int Tick_count = 0x00;
 
 unsigned short new_cmd_received; //-- set each time new
 unsigned short new_cmd_sent;
@@ -42,16 +37,15 @@ int prevTransmitFlag;
 // command is received
 //-- function prototypes ---------------------------------------void Init_Clock(void); //-- initialize the clock to use external
 // crystal oscillator
-void Init_Port(void); 	//-- Configures the Crossbar and GPIO
-						// ports
-void Init_UART0(void); 	//-- configure and initialize the UART0
-						// serial comm
+void Init_Port(void); //-- Configures the Crossbar and GPIO
+// ports
+void Init_UART0(void); //-- configure and initialize the UART0
+// serial comm
 void Init_Timer3(unsigned int counts);
 void Timer3_ISR(void); //-- ISR for Timer 3
 void UART0_ISR(void); //-- ISR for UART0
 void Init_ADC0		(void);			//-- Initialise the ADC0
 void ADC0_ISR       (void);
-void INT1_ISR		(void);
 
 //--------------------------------------------------------------
 
@@ -108,14 +102,13 @@ void Init_Clock(void)
 void Init_Port(void) //-- Configures the Crossbar & GPIO ports
 {
 		XBR0 = 0x04; //-- Enable UART0
-		XBR1 = 0x04;
-		XBR1 |= 0x10;	//-- enable /INT1 (Pin P0.3)  //--New
+		XBR1 = 0x00;
 		XBR2 = 0x40; //-- Enable Crossbar and weak pull-ups
 		// (globally)
 		P0MDOUT |= 0x01; //-- Enable TX0 as a push-pull o/p
-		P1MDOUT = 0xff; //-- Enable P1.6 (LED) as push-
-						 // pull output
-				
+		P1MDOUT |= 0x4f; //-- Enable P1.6 (LED) as push-
+		// pull output
+
 				//-- Port 7-4 I/O Lines
 		P74OUT = 0x48;				// Output configuration for P4-7
 									// (P7[0:3] Push Pull) - Control Lines for LCD
@@ -126,17 +119,6 @@ void Init_Port(void) //-- Configures the Crossbar & GPIO ports
 
 
 		P5 |= 0x0F;
-
-
-	ES0 = 1;	//-- enable UART0 interrupt
-	IT0 = 1;	//-- /INT0 is edge triggered
-	IT1 = 1;	//-- /INT1 is edge triggered
-	PT0 =1;		//-- High priority for Timer 0 (PWM generator)
-	PT1 =1;		//-- High priority for Timer 1 (Tacho Counter)
-	PT2 =1;
-	EX0 = 1;	//-- enable external interrupt 0 (/INT0)
-	EX1 = 1;	//-- enable external interrupt 1 (/INT1)
-	
 
 }
 //--------------------------------------------------------------
@@ -164,13 +146,12 @@ void Init_UART0(void)
 	// ready to receive more
 }
 //--------------------------------------------------------------
-//-- Configure Timer3 to auto-reload and generate an interrupt 
-// at interval specified by <counts> using SYSCLK/12 as its
+//-- Configure Timer3 to auto-reload and generate an interrupt // at interval specified by <counts> using SYSCLK/12 as its
 // time base.
 void Init_Timer3 (unsigned int counts)
 {
 		TMR3CN = 0x00; //-- Stop Timer3; Clear TF3;
-					   //-- use SYSCLK/12 as time base
+		//-- use SYSCLK/12 as time base
 		TMR3RL = -counts; //-- Init reload values
 		TMR3 = 0xffff; //-- set to reload immediately
 		EIE2 |= 0x01; //-- enable Timer3 interrupts
@@ -184,7 +165,7 @@ void Timer3_ISR (void) interrupt 14
 {
 		TMR3CN &= ~(0x80); //-- clear TF3
 		LED_count++;
-		Tick_count++;
+
 		
 		
 			
@@ -243,7 +224,7 @@ void ADC0_ISR(void) interrupt 15
 void UART0_ISR(void) interrupt 4
 {
 	
-	time_in_sec=1/115000;
+
 
 		//-- pending flags RI0 (SCON0.0) and TI0(SCON0.1)
 		if  ( RI0 == 1) //-- interrupt caused by received byte
@@ -264,9 +245,9 @@ void UART0_ISR(void) interrupt 4
 				  {
 				      
                     	lcd_clear();
-			         //	lcd_goto(0x00) ;   //-- go to first Row
+			         	lcd_goto(0x00) ;   //-- go to first Row
 					    printf("   Start   ");
-						//lcd_goto(0x40);   //-- go to Second Row
+						lcd_goto(0x40);   //-- go to Second Row
 						printf("  but 2 & 3:  ");
 
 
@@ -281,9 +262,9 @@ void UART0_ISR(void) interrupt 4
 				  {
 				      
                     	lcd_clear();
-			         //	lcd_goto(0x00) ;   //-- go to first Row
+			         	lcd_goto(0x00) ;   //-- go to first Row
 					    printf("   Stall   ");
-					//	lcd_goto(0x40);   //-- go to Second Row
+						lcd_goto(0x40);   //-- go to Second Row
 						printf(" but 3 & 4   ");
 
 						P5 &= 0x0F;
@@ -323,14 +304,8 @@ void UART0_ISR(void) interrupt 4
 
 }//UART0_ISR
 
-/////////////////////////////////////////////////////////////////////////
 
-void INT1_ISR(void) interrupt 2 
-{
-	pulses++;
-	actual_speed= pulses/312;
 
-}
 
 
 
@@ -362,8 +337,7 @@ void main(void)
 		Init_Port();
 		Init_ADC0();
 
-		Init_Timer3(BLINKCLK/12/blink_speed); 
-		Init_UART0();
+		Init_Timer3(BLINKCLK/12/blink_speed); Init_UART0();
 		AD0BUSY = 1;	// write 1 to ADC0BUSY and start ADC0 conversion 
 		EA = 1; //-- enable global interrupts
 			
@@ -371,138 +345,120 @@ void main(void)
 
 		while(1) //-- go on forever
 		{
-            lcd_goto(0x80);   //-- go to Second Row
-			
-			//RPM = 115000/321/pulses;
-			//time_in_sec=((time_in_sec*10^6)/728286)+1;
-			//printf("Speed:%9d", time_in_sec);
-			
-
-			if( i == 3000)
+            if( i == 3000)
 			{
-			   	i = -1;
-			   	RI0 = 1;
+			   i = -1;
+			   RI0 = 1;
 			
 			}
-			//else
-		     //  RI0 == 0;
+			else
+		       RI0 == 0;
 
 		
-       		if ( blink_speed==0)
-			{
-				LED=0;
-			}
+       if ( blink_speed==0)
+				{
+					LED=0;
+				}
 
            if (new_cmd_received == 1)
 	       {
 		   
 
  	
-		    switch (received_byte)
-				{
-				case 0:
+							    switch (received_byte)
+									{
+									case 1: 
 
-					lcd_clear();
-				//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  ");
-					huge_delay(20);
-					blink_speed = 0;
-					DIR=0;
-					break; 
+									    lcd_clear();
+										//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Left Slow"  );
+										huge_delay(20);
+										blink_speed = 1; 
+										DIR = 1;
+										break; // slow
 
-				case 1: 
+									case 2: 
 
-				    lcd_clear();
-					//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Left Slow"  );
-					huge_delay(20);
-					blink_speed = 1; 
-					break; // slow
+										 lcd_clear();
+										//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Left Medium " );
+										huge_delay(20);
+										blink_speed = 10; 
+										break; // medium
 
-				case 2: 
+									case 3:
 
-					 lcd_clear();
-					//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Left Medium " );
-					huge_delay(20);
-					blink_speed = 10; 
-					break; // medium
+										lcd_clear();
+									//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Left Fast");
+										huge_delay(20);
+										blink_speed = 50;
+										break; // fast
 
-				case 3:
+									case 4: 
 
-					lcd_clear();
-				//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Left Fast");
-					huge_delay(20);
-					blink_speed = 50;
-					break; // fast
+									    lcd_clear();
+										//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Right Slow"  );
+										huge_delay(20);
+										blink_speed = 1; 
+										break; // slow
 
-				case 4: 
+									case 5: 
 
-				    lcd_clear();
-					//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Right Slow"  );
-					huge_delay(20);
-					blink_speed = 1; 
-					break; // slow
+										 lcd_clear();
+										//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Right Medium " );
+										huge_delay(20);
+										blink_speed = 10; 
+										break; // medium
 
-				case 5: 
+									case 6:
 
-					 lcd_clear();
-					//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Right Medium " );
-					huge_delay(20);
-					blink_speed = 10; 
-					break; // medium
+										lcd_clear();
+									//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Right Fast");
+										huge_delay(20);
+										blink_speed = 50;
+										break; // fast
 
-				case 6:
+									case 7:
 
-					lcd_clear();
-				//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Right Fast");
-					huge_delay(20);
-					blink_speed = 50;
-					break; // fast
+										lcd_clear();
+									//-- Display
+										lcd_goto(0x00) ;   //-- go to first Row
+									    printf("  Stop");
+										huge_delay(20);
+										blink_speed = 0;
+										break; // fast
 
-				case 7:
+								
+									
+									default : blink_speed = 0; break;
+					     			}
+								EA = 0; Init_Timer3(BLINKCLK/12/blink_speed);
+								EA = 1; //-- enable interrupts
+								new_cmd_received = 0;
 
-					lcd_clear();
-				//-- Display
-					lcd_goto(0x00) ;   //-- go to first Row
-				    printf("  Stop");
-					huge_delay(20);
-					blink_speed = 0;
-					break; // 
+						}//if
 
-				case 8:
 
-					DIR=1;
-					break; // 
-
-				case 9:
-
-					DIR=0;
-					break; // fast
-				
-				default : blink_speed = 0; break;
-     			}
-
-			EA = 0; 
-			Init_Timer3(BLINKCLK/12/blink_speed);
-			EA = 1; //-- enable interrupts
-			new_cmd_received = 0;
-
-		}//if
+			      
 
              i++;
-	}//while
+
+			  
+ 				
+
+			}//while
+
+			
 
 }//main
 
@@ -510,13 +466,13 @@ void main(void)
 
 //------------------- LCD functions -----------------------------------------------
 #pragma OPTIMIZE (7)
+
 void lcd_init(void)
 {
 	LCD_CTRL_PORT = LCD_CTRL_PORT & ~RS_MASK;	// RS = 0
 	LCD_CTRL_PORT = LCD_CTRL_PORT & ~RW_MASK;	// RW = 0
 	LCD_CTRL_PORT = LCD_CTRL_PORT & ~E_MASK;	//  E = 0
-	large_delay(200);				  // 16ms delay
-
+	large_delay(200);				  // 16ms delaISR
 	LCD_DAT_PORT = 0x38;			  // set 8-bit mode
 	pulse_E();
 	large_delay(50);				  // 4.1ms delay
@@ -534,9 +490,8 @@ void lcd_init(void)
 	lcd_cmd(0x0E);					  // display and curser on
 }
 
+
 #pragma OPTIMIZE (9)
-
-
 
 //---------------------------------------------------------------------------------
 // lcd_busy_wait
@@ -574,6 +529,7 @@ char putchar(char dat)
 	LCD_DAT_PORT = dat;
 	pulse_E();
 	return 1;
+
 }
 
 
@@ -624,7 +580,6 @@ void lcd_curser(bit on)        // 1 displays curser, 0 hides it
 	else
 		lcd_cmd(0x0C);
 }
-
 
 
 //---------------------------------------------------------------------------------
