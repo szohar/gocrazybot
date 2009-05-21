@@ -632,63 +632,7 @@ namespace PCComm
                     break;
             }
 
-         /*
-            
-            //retrieve number of bytes in the buffer
-            int bytes2 = comPort.BytesToRead;
-            //create a byte array to hold the awaiting data
-            byte[] comBuffer2 = new byte[bytes2];
-            //read the data and store it
-            comPort.Read(comBuffer2, 0, bytes2);
-            //display the data to the user
-            DisplayData(MessageType.Incoming, ByteToHex(comBuffer2) + "\n");
-
-
-
-            if (bytes2 >= 5)
-            {
-                bool[] test = new bool[8];
-                test = convertToBits(comBuffer2[5]);
-               // _displayWindow.AppendText("\ntest:");
-                /*
-                for (int i = test.Length - 1; i >= 0; i--)
-                {
-                    if (test[i] == true)
-                        _displayWindow.AppendText("1 ");
-                    if (test[i] == false)
-                        _displayWindow.AppendText("0 ");
-                }//for
-                 
-                _displayWindow.AppendText("/n");
-                
-
-                  
-                test = convertToBits(comBuffer2[6]);
-               // _displayWindow.AppendText("\ntest:");
-
-                /*
-                for (int i = test.Length - 1; i >= 0; i--)
-                {
-                    if (test[i] == true)
-                        _displayWindow.AppendText("1 ");
-                    if (test[i] == false)
-                        _displayWindow.AppendText("0 ");
-                }//for
-                
-                  
-                _displayWindow.AppendText("\n");
-            
-                
-            }//if
-        
-
-        /*
-            for (int i = 0; i < comBuffer2.Length; i++)
-            {
-                //     _displayWindow.AppendText("\n==> input[" + i + "] is: " + comBuffer2[i] + "\n");
-
-            }
-            */
+         
         }
         #endregion
     }
