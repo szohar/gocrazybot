@@ -424,6 +424,13 @@ namespace PCComm
 
         }
 
+        private void textBoxRPM_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
         
 
         
