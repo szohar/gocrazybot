@@ -39,9 +39,8 @@ unsigned short new_cmd_sent;
 int transmitFlag;
 int prevTransmitFlag;
 
-// command is received
-//-- function prototypes ---------------------------------------void Init_Clock(void); //-- initialize the clock to use external
-// crystal oscillator
+
+//-- function prototypes 
 void Init_Port(void); 	//-- Configures the Crossbar and GPIO
 						// ports
 void Init_UART0(void); 	//-- configure and initialize the UART0
@@ -255,8 +254,6 @@ void UART0_ISR(void) interrupt 4
         
 		}
       
-	    
-
 
              //START: buttons 1 and 2 together
 
