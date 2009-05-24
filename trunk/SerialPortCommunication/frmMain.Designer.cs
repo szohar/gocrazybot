@@ -64,6 +64,7 @@ namespace PCComm
             this.button_medium = new System.Windows.Forms.Button();
             this.button_fast = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBoxRPM = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -281,9 +282,9 @@ namespace PCComm
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 276);
+            this.textBox3.Location = new System.Drawing.Point(74, 274);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(75, 20);
+            this.textBox3.Size = new System.Drawing.Size(111, 20);
             this.textBox3.TabIndex = 13;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -428,12 +429,21 @@ namespace PCComm
             this.label8.Text = "Run Time";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // textBoxRPM
+            // 
+            this.textBoxRPM.Location = new System.Drawing.Point(231, 427);
+            this.textBoxRPM.Name = "textBoxRPM";
+            this.textBoxRPM.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRPM.TabIndex = 37;
+            this.textBoxRPM.TextChanged += new System.EventHandler(this.textBoxRPM_TextChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(444, 475);
+            this.Controls.Add(this.textBoxRPM);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button_fast);
             this.Controls.Add(this.button_medium);
@@ -509,6 +519,7 @@ namespace PCComm
         private System.Windows.Forms.Button button_fast;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboBaud;
+        private System.Windows.Forms.TextBox textBoxRPM;
        
     }
 }

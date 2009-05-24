@@ -232,8 +232,8 @@ void ADC0_ISR(void) interrupt 15
 					// conversion initiated on every write of "1" to AD0BUSY
 					// and left justify data
 
-	 message = ADC0H;	// calc the ref_speed by using ADCO value
-	 message = message >>1; //make message to between 0 and 127
+	 //message = ADC0H;	// calc the ref_speed by using ADCO value
+	 //message = message >>1; //make message to between 0 and 127
 
 
 }
@@ -299,7 +299,7 @@ void UART0_ISR(void) interrupt 4
        //set output buffer
             outBuffer[0] = command;
 		
-	    	outBuffer[1] = P5;
+	    	outBuffer[1] = P2;
 			outBuffer[2] = message;
 			outBuffer[3] = received_byte;
 	
@@ -374,9 +374,14 @@ void main(void)
             lcd_goto(0x80);   //-- go to Second Row
 			
 			//RPM = 115000/321/pulses;
-			//time_in_sec=((time_in_sec*10^6)/728286)+1;
-			//printf("Speed:%9d", time_in_sec);
-			
+			time_in_sec=((time_in_sec*10^6)/728286)+1;
+			pulses=642;
+			RPM=pulses/(time_in_sec*60);
+			printf("T:%3d", time_in_sec);
+			//printf("P:%9d", pulses);
+			printf("R:%6d", RPM);
+			command=1; // send code 1 to pc
+			message = RPM; // send message to pc that the RPM is...
 
 			if( i == 3000)
 			{
