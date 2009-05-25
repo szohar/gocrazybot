@@ -359,7 +359,7 @@ void main(void)
 		Init_Port();
 		Init_ADC0();
 
-		Init_Timer3(BLINKCLK/12/blink_speed); 
+		Init_Timer3(BLINKCLK/64/blink_speed); 
 		Init_UART0();
 		AD0BUSY = 1;	// write 1 to ADC0BUSY and start ADC0 conversion 
 		EA = 1; //-- enable global interrupts
@@ -420,7 +420,7 @@ void main(void)
 					lcd_goto(0x00) ;   //-- go to first Row
 				    printf("  Left Slow"  );
 					huge_delay(20);
-					blink_speed = 1; 
+					blink_speed = 100000;
 					break; // slow
 
 				case 2: 
@@ -450,7 +450,7 @@ void main(void)
 					lcd_goto(0x00) ;   //-- go to first Row
 				    printf("  Right Slow"  );
 					huge_delay(20);
-					blink_speed = 1; 
+					blink_speed = 100000;
 					break; // slow
 
 				case 5: 
@@ -497,7 +497,7 @@ void main(void)
      			}
 
 			EA = 0; 
-			Init_Timer3(BLINKCLK/12/blink_speed);
+			Init_Timer3(BLINKCLK/64/blink_speed);
 			EA = 1; //-- enable interrupts
 			new_cmd_received = 0;
 
