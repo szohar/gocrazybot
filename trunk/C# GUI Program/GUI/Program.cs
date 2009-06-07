@@ -14,7 +14,7 @@ namespace F350Compass
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI2009());
+            Application.Run(new compass());
         }
     }
 }
