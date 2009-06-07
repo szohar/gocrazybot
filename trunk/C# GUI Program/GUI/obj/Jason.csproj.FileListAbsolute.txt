@@ -1,0 +1,16 @@
+G:\Usb Testing\Jason\Jason\obj\Debug\ResolveAssemblyReference.cache
+G:\Usb Testing\Jason\Jason\obj\Debug\Jason.Properties.Resources.resources
+G:\Usb Testing\Jason\Jason\obj\Debug\Jason.csproj.GenerateResource.Cache
+G:\Usb Testing\Jason\Jason\bin\Debug\Jason.exe
+G:\Usb Testing\Jason\Jason\bin\Debug\Jason.pdb
+G:\Usb Testing\Jason\Jason\obj\Debug\Jason.exe
+G:\Usb Testing\Jason\Jason\obj\Debug\Jason.pdb
+K:\Usb Testing\Jason\Jason\obj\Debug\Jason.exe
+K:\Usb Testing\Jason\Jason\obj\Debug\Jason.pdb
+K:\Usb Testing\Jason\Jason\bin\Debug\Jason.exe
+K:\Usb Testing\Jason\Jason\bin\Debug\Jason.pdb
+K:\Usb Testing\Jason\Jason\obj\Debug\ResolveAssemblyReference.cache
+K:\Usb Testing\Jason\Jason\obj\Debug\Jason.Form1.resources
+K:\Usb Testing\Jason\Jason\obj\Debug\Jason.Properties.Resources.resources
+K:\Usb Testing\Jason\Jason\obj\Debug\Jason.csproj.GenerateResource.Cache
+G:\Usb Testing\Jason\Jason\obj\Debug\Jason.GUI2009.resources
