@@ -1,0 +1,1 @@
+"C:\silabs\MCU\gocrazybot\serial_lab with encoder.obj"  TO "C:\silabs\MCU\gocrazybot\serial_lab with encoder"  RS(256) PL(68) PW(78)  

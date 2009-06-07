@@ -1,0 +1,29 @@
+
+BL51 BANKED LINKER/LOCATER V6.05 - SN: Eval Version
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2007
+"C:\silabs\MCU\gocrazybot\serial_lab with encoder.obj"  TO "C:\silabs\MCU\gocrazybot\serial_lab with encoder"  RS(256) PL(68) PW(78)  
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_CMD?SERIAL_LAB_WITH_ENCODER
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB_WITH_ENCODER
+    CALLER2: ?C_C51STARTUP
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?PRINTF?PRINTF
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB_WITH_ENCODER
+    CALLER2: ?C_C51STARTUP
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_PUTCHAR?SERIAL_LAB_WITH_ENCODER
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB_WITH_ENCODER
+    CALLER2: ?C_C51STARTUP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 059CH BYTE (70%) *
+******************************************************************************
+
+>> 
+>> 
+>> 
+Program Size: data=107.2 xdata=0 code=2798
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

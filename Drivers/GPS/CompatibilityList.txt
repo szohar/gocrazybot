@@ -1,0 +1,5 @@
+QstarzGPSView is only compatible with follwoing models:
+
+GPS Receiver: BT-Q816(Receive Data only), BT-Q818(Receive Data only,), BT-Q818 eXtreme, ,BT-Q818X, BT-Q890
+
+Travel Recorder: BT-Q1000, BT-Q1000 Platinum, BT-Q1000X, BT-Q1200, BT-Q1200 Ultra, BT-Q1300, BT-Q1300S

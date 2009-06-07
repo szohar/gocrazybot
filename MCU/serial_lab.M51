@@ -1,0 +1,12 @@
+BL51 BANKED LINKER/LOCATER V6.05              06/04/2009  21:59:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+C:\SILABS\MCU\IDEFILES\C51\BIN\BL51.EXE C:\SiLabs\MCU\gocrazybot\serial_lab wi
+>> th encoder.obj TO C:\SiLabs\MCU\gocrazybot\serial_lab RS (256) PL (68) PW (
+>> 78)
+
+
+*** FATAL ERROR L210: I/O ERROR ON INPUT FILE:
+    EXCEPTION 0021H: PATH OR FILE NOT FOUND
+    FILE: C:\SiLabs\MCU\gocrazybot\serial_lab with encoder.obj
