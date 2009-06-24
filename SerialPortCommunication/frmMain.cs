@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using PCComm;
-
+using System.IO;
+using System.IO.Ports;
+using System.Threading;
+using System.Diagnostics;
 using System.Drawing.Drawing2D;
 
 namespace PCComm
@@ -22,7 +25,7 @@ namespace PCComm
 
     public partial class frmMain : Form
     {
-        Timer timer1 = new Timer();
+        System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
         CommunicationManager comm = new CommunicationManager();
         string transType = string.Empty;
         byte[] byteArr;
@@ -424,20 +427,10 @@ namespace PCComm
 
         }
 
-        private void textBoxRPM_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         
-
-        
-
-        
-
-        
-
         
 
     }
 }
+
+

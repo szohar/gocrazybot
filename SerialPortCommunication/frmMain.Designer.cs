@@ -29,7 +29,18 @@ namespace PCComm
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxRPM = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button_fast = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button_medium = new System.Windows.Forms.Button();
+            this.button_slow = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button_direction = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -64,17 +75,6 @@ namespace PCComm
             this.cboData = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmdClose = new System.Windows.Forms.Button();
-            this.button_direction = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button_slow = new System.Windows.Forms.Button();
-            this.button_medium = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button_fast = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBoxRPM = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -100,6 +100,16 @@ namespace PCComm
             this.tabControl1.Size = new System.Drawing.Size(787, 435);
             this.tabControl1.TabIndex = 38;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(779, 409);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Main";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel1);
@@ -115,17 +125,107 @@ namespace PCComm
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(777, 409);
+            this.tabPage2.Size = new System.Drawing.Size(779, 409);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Control";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Lime;
+            this.panel1.Location = new System.Drawing.Point(71, 51);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 42);
+            this.panel1.TabIndex = 6;
+            this.panel1.Visible = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBoxRPM
+            // 
+            this.textBoxRPM.Location = new System.Drawing.Point(228, 265);
+            this.textBoxRPM.Name = "textBoxRPM";
+            this.textBoxRPM.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRPM.TabIndex = 37;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(343, 265);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(78, 20);
+            this.textBox6.TabIndex = 17;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // button_fast
+            // 
+            this.button_fast.Location = new System.Drawing.Point(168, 197);
+            this.button_fast.Name = "button_fast";
+            this.button_fast.Size = new System.Drawing.Size(72, 52);
+            this.button_fast.TabIndex = 35;
+            this.button_fast.Text = "Fast";
+            this.button_fast.UseVisualStyleBackColor = true;
+            this.button_fast.Click += new System.EventHandler(this.button_fast_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(71, 112);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(111, 20);
+            this.textBox3.TabIndex = 13;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // button_medium
+            // 
+            this.button_medium.Location = new System.Drawing.Point(87, 197);
+            this.button_medium.Name = "button_medium";
+            this.button_medium.Size = new System.Drawing.Size(75, 52);
+            this.button_medium.TabIndex = 34;
+            this.button_medium.Text = "Medium";
+            this.button_medium.UseVisualStyleBackColor = true;
+            this.button_medium.Click += new System.EventHandler(this.button_medium_Click);
+            // 
+            // button_slow
+            // 
+            this.button_slow.Location = new System.Drawing.Point(9, 197);
+            this.button_slow.Name = "button_slow";
+            this.button_slow.Size = new System.Drawing.Size(72, 52);
+            this.button_slow.TabIndex = 33;
+            this.button_slow.Text = "Slow";
+            this.button_slow.UseVisualStyleBackColor = true;
+            this.button_slow.Click += new System.EventHandler(this.button_slow_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(94, 259);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(68, 20);
+            this.textBox5.TabIndex = 15;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(341, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 36;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // button_direction
+            // 
+            this.button_direction.Location = new System.Drawing.Point(87, 140);
+            this.button_direction.Name = "button_direction";
+            this.button_direction.Size = new System.Drawing.Size(75, 46);
+            this.button_direction.TabIndex = 31;
+            this.button_direction.Text = "Direction";
+            this.button_direction.UseVisualStyleBackColor = true;
+            this.button_direction.Click += new System.EventHandler(this.button_direction_Click);
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(777, 409);
+            this.tabPage3.Size = new System.Drawing.Size(779, 409);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "GPS";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -135,7 +235,7 @@ namespace PCComm
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(777, 409);
+            this.tabPage4.Size = new System.Drawing.Size(779, 409);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Compass";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -145,7 +245,7 @@ namespace PCComm
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(777, 409);
+            this.tabPage5.Size = new System.Drawing.Size(779, 409);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Sensors";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -155,7 +255,7 @@ namespace PCComm
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(777, 409);
+            this.tabPage6.Size = new System.Drawing.Size(779, 409);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Micro";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -165,7 +265,7 @@ namespace PCComm
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(406, 409);
+            this.tabPage7.Size = new System.Drawing.Size(779, 409);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -175,7 +275,7 @@ namespace PCComm
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(406, 409);
+            this.tabPage8.Size = new System.Drawing.Size(779, 409);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -477,107 +577,6 @@ namespace PCComm
             this.cmdClose.TabIndex = 5;
             this.cmdClose.Text = "Close Port";
             this.cmdClose.UseVisualStyleBackColor = true;
-            // 
-            // button_direction
-            // 
-            this.button_direction.Location = new System.Drawing.Point(87, 140);
-            this.button_direction.Name = "button_direction";
-            this.button_direction.Size = new System.Drawing.Size(75, 46);
-            this.button_direction.TabIndex = 31;
-            this.button_direction.Text = "Direction";
-            this.button_direction.UseVisualStyleBackColor = true;
-            this.button_direction.Click += new System.EventHandler(this.button_direction_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(341, 291);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 36;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(94, 259);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(68, 20);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // button_slow
-            // 
-            this.button_slow.Location = new System.Drawing.Point(9, 197);
-            this.button_slow.Name = "button_slow";
-            this.button_slow.Size = new System.Drawing.Size(72, 52);
-            this.button_slow.TabIndex = 33;
-            this.button_slow.Text = "Slow";
-            this.button_slow.UseVisualStyleBackColor = true;
-            this.button_slow.Click += new System.EventHandler(this.button_slow_Click);
-            // 
-            // button_medium
-            // 
-            this.button_medium.Location = new System.Drawing.Point(87, 197);
-            this.button_medium.Name = "button_medium";
-            this.button_medium.Size = new System.Drawing.Size(75, 52);
-            this.button_medium.TabIndex = 34;
-            this.button_medium.Text = "Medium";
-            this.button_medium.UseVisualStyleBackColor = true;
-            this.button_medium.Click += new System.EventHandler(this.button_medium_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(71, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(111, 20);
-            this.textBox3.TabIndex = 13;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // button_fast
-            // 
-            this.button_fast.Location = new System.Drawing.Point(168, 197);
-            this.button_fast.Name = "button_fast";
-            this.button_fast.Size = new System.Drawing.Size(72, 52);
-            this.button_fast.TabIndex = 35;
-            this.button_fast.Text = "Fast";
-            this.button_fast.UseVisualStyleBackColor = true;
-            this.button_fast.Click += new System.EventHandler(this.button_fast_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(343, 265);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(78, 20);
-            this.textBox6.TabIndex = 17;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // textBoxRPM
-            // 
-            this.textBoxRPM.Location = new System.Drawing.Point(228, 265);
-            this.textBoxRPM.Name = "textBoxRPM";
-            this.textBoxRPM.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRPM.TabIndex = 37;
-            this.textBoxRPM.TextChanged += new System.EventHandler(this.textBoxRPM_TextChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Lime;
-            this.panel1.Location = new System.Drawing.Point(71, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 42);
-            this.panel1.TabIndex = 6;
-            this.panel1.Visible = false;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(777, 409);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Main";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
