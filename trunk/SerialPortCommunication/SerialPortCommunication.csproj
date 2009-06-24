@@ -79,6 +79,12 @@
   <ItemGroup>
     <Content Include="GPSClient.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C# GUI Program\GUI\compass.csproj">
+      <Project>{960B26C8-6B16-47BE-86BF-0037086021B2}</Project>
+      <Name>compass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
