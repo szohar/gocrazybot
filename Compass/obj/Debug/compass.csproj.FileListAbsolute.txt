@@ -1,0 +1,20 @@
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\bin\Debug\F350.exe
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\bin\Debug\F350.pdb
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\ResolveAssemblyReference.cache
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\F350Compass.compass.resources
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\F350_Compass.Properties.Resources.resources
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\compass.csproj.GenerateResource.Cache
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\F350.exe
+C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\obj\Debug\F350.pdb
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\F350.exe
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\F350.pdb
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\bin\Debug\F350.exe
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\bin\Debug\F350.pdb
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\ResolveAssemblyReference.cache
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\F350Compass.compass.resources
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\F350_Compass.Properties.Resources.resources
+G:\Ryan\backup1\Silabs and VS code\gocrazybot\C# GUI Program\GUI\obj\Debug\compass.csproj.GenerateResource.Cache
+C:\users\ryan\documents\backup1\silabs and vs code\gocrazybot\c# gui program\GUI_compass\obj\Debug\F350.exe
+C:\users\ryan\documents\backup1\silabs and vs code\gocrazybot\c# gui program\GUI_compass\obj\Debug\F350.pdb
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_compass\obj\Debug\F350.exe
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_compass\obj\Debug\F350.pdb

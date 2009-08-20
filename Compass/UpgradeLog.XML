@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="gui2009">
+</Property><Property Name="Solution File" Value="C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\gui2009.sln">
+</Property><Property Name="User Options File" Value="C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\gui2009.suo">
+</Property><Property Name="Date" Value="Sunday, June 07, 2009">
+</Property><Property Name="Time" Value="20:03 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="gui2009.sln" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\gui2009.sln">
+</Event><Event ErrorLevel="0" Project="" Source="gui2009.suo" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\gui2009.suo">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="gui2009.csproj" Description="Project file successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\gui2009.csproj">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="GUI2009.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\GUI2009.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="GUI2009.Designer.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\GUI2009.Designer.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Program.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Properties\Settings.settings" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Resources\Dock.jpg" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Resources\Dock.jpg">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="GUI2009.resx" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\GUI2009.resx">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="Properties\Resources.resx" Description="File successfully backed up as C:\SiLabs\MCU\gocrazybot\C# GUI Program\GUI\Backup\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="gui2009.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="gui2009" Source="gui2009.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="gui2009.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="gui2009.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="gui2009" Source="gui2009.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

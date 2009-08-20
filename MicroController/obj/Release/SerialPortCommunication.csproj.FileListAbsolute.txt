@@ -1,0 +1,18 @@
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.exe.config
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.exe
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.pdb
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.exe
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.pdb
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\ResolveAssemblyReference.cache
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\PCComm.frmMain.resources
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\PCComm.Properties.Resources.resources
+E:\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.csproj.GenerateResource.Cache
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.exe.config
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.exe
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.pdb
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.exe
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\bin\Release\SerialPortCommunication.pdb
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\ResolveAssemblyReference.cache
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\PCComm.frmMain.resources
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\PCComm.Properties.Resources.resources
+E:\Semester 7\143.478\SerialPort\SerialPortWithC#\SerialPortCommunication\obj\Release\SerialPortCommunication.csproj.GenerateResource.Cache
