@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GPS">
+</Property><Property Name="Solution File" Value="H:\Ryan\GPS\Robotic GPS\GPS\GPS\Code\Where the heck am i\CSharp\GPS.sln">
+</Property><Property Name="Date" Value="Sunday, June 22, 2008">
+</Property><Property Name="Time" Value="19:04 PM">
+</Property></Properties><Event ErrorLevel="0" Project="GPSClient" Source="GPSClient\GPSClient.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GPSClient" Source="GPSClient\GPSClient.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GPS" Source="GPS\GPS.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GPS" Source="GPS\GPS.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GPS.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="GPS.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GPSClient" Source="GPSClient\GPSClient.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GPS" Source="GPS\GPS.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
