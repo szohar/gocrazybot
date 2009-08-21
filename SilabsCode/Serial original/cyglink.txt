@@ -1,0 +1,1 @@
+"C:\SiLabs\MCU\robot\Serial original\serial_lab.obj"  TO "C:\SiLabs\MCU\robot\Serial original\serial_lab" RS(256) PL(68) PW(78) 

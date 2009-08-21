@@ -1,0 +1,29 @@
+
+BL51 BANKED LINKER/LOCATER V6.05 - SN: Eval Version
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2007
+"C:\SiLabs\MCU\robot\Serial original\serial_lab.obj"  TO "C:\SiLabs\MCU\robot\Serial original\serial_lab" RS(256) PL(68) PW(78) 
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_CMD?SERIAL_LAB
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB
+    CALLER2: ?C_C51STARTUP
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?PRINTF?PRINTF
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB
+    CALLER2: ?C_C51STARTUP
+
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_PUTCHAR?SERIAL_LAB
+    CALLER1: ?PR?UART0_ISR?SERIAL_LAB
+    CALLER2: ?C_C51STARTUP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 04F8H BYTE (62%) *
+******************************************************************************
+
+>> 
+>> 
+>> 
+Program Size: data=93.2 xdata=0 code=2640
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
