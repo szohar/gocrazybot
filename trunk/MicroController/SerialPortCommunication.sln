@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortCommunication", "SerialPortCommunication.csproj", "{67D06A37-B2AC-4147-8108-8A5A0D9DCA19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS", "..\GPS\GPS\GPS.csproj", "{32F8D83A-1113-4D31-868E-623AE253084D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{67D06A37-B2AC-4147-8108-8A5A0D9DCA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D06A37-B2AC-4147-8108-8A5A0D9DCA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67D06A37-B2AC-4147-8108-8A5A0D9DCA19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F8D83A-1113-4D31-868E-623AE253084D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F8D83A-1113-4D31-868E-623AE253084D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F8D83A-1113-4D31-868E-623AE253084D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F8D83A-1113-4D31-868E-623AE253084D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
