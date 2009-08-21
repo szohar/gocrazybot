@@ -28,6 +28,7 @@ namespace PCComm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cboData = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,9 +66,46 @@ namespace PCComm
             this.button_fast = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxRPM = new System.Windows.Forms.TextBox();
+            this.picSats = new System.Windows.Forms.PictureBox();
+            this.listSatellites = new System.Windows.Forms.ListView();
+            this.IdColumn = new System.Windows.Forms.ColumnHeader();
+            this.ElevationColumn = new System.Windows.Forms.ColumnHeader();
+            this.AzimuthColumn = new System.Windows.Forms.ColumnHeader();
+            this.UsedColumn = new System.Windows.Forms.ColumnHeader();
+            this.LocalDateTime = new System.Windows.Forms.Label();
+            this.labelTimeLocal = new System.Windows.Forms.Label();
+            this.DateZulu = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.labelDataValid = new System.Windows.Forms.Label();
+            this.DataValid = new System.Windows.Forms.Label();
+            this.labelVDOP = new System.Windows.Forms.Label();
+            this.VDOP = new System.Windows.Forms.Label();
+            this.labelHDOP = new System.Windows.Forms.Label();
+            this.HDOP = new System.Windows.Forms.Label();
+            this.labelPDOP = new System.Windows.Forms.Label();
+            this.PDOP = new System.Windows.Forms.Label();
+            this.labelFixMode = new System.Windows.Forms.Label();
+            this.FixMode = new System.Windows.Forms.Label();
+            this.listGPSQuality = new System.Windows.Forms.ListBox();
+            this.labelLatitude = new System.Windows.Forms.Label();
+            this.Latitude = new System.Windows.Forms.Label();
+            this.Longitude = new System.Windows.Forms.Label();
+            this.labelLongitude = new System.Windows.Forms.Label();
+            this.Altitude = new System.Windows.Forms.Label();
+            this.labelAltitude = new System.Windows.Forms.Label();
+            this.TineZulu = new System.Windows.Forms.Label();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.NMEAText = new System.Windows.Forms.TextBox();
+            this.dumpRawDataCheck = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.COMlistBox = new System.Windows.Forms.ListBox();
+            this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSats)).BeginInit();
             this.SuspendLayout();
             // 
             // cboData
@@ -437,12 +475,358 @@ namespace PCComm
             this.textBoxRPM.TabIndex = 37;
             this.textBoxRPM.TextChanged += new System.EventHandler(this.textBoxRPM_TextChanged);
             // 
+            // picSats
+            // 
+            this.picSats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.picSats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picSats.Location = new System.Drawing.Point(456, 15);
+            this.picSats.Name = "picSats";
+            this.picSats.Size = new System.Drawing.Size(181, 205);
+            this.picSats.TabIndex = 38;
+            this.picSats.TabStop = false;
+            // 
+            // listSatellites
+            // 
+            this.listSatellites.AllowColumnReorder = true;
+            this.listSatellites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listSatellites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IdColumn,
+            this.ElevationColumn,
+            this.AzimuthColumn,
+            this.UsedColumn});
+            this.listSatellites.FullRowSelect = true;
+            this.listSatellites.Location = new System.Drawing.Point(655, 15);
+            this.listSatellites.Name = "listSatellites";
+            this.listSatellites.Size = new System.Drawing.Size(248, 205);
+            this.listSatellites.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listSatellites.TabIndex = 39;
+            this.listSatellites.UseCompatibleStateImageBehavior = false;
+            this.listSatellites.View = System.Windows.Forms.View.Details;
+            // 
+            // IdColumn
+            // 
+            this.IdColumn.Text = "Satellite Id";
+            this.IdColumn.Width = 81;
+            // 
+            // ElevationColumn
+            // 
+            this.ElevationColumn.Text = "Elevation";
+            this.ElevationColumn.Width = 52;
+            // 
+            // AzimuthColumn
+            // 
+            this.AzimuthColumn.Text = "Azimuth";
+            this.AzimuthColumn.Width = 51;
+            // 
+            // UsedColumn
+            // 
+            this.UsedColumn.Text = "In-use";
+            this.UsedColumn.Width = 45;
+            // 
+            // LocalDateTime
+            // 
+            this.LocalDateTime.Location = new System.Drawing.Point(264, 527);
+            this.LocalDateTime.Name = "LocalDateTime";
+            this.LocalDateTime.Size = new System.Drawing.Size(116, 24);
+            this.LocalDateTime.TabIndex = 61;
+            this.LocalDateTime.Text = "Local DateTime:";
+            this.LocalDateTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelTimeLocal
+            // 
+            this.labelTimeLocal.AutoSize = true;
+            this.labelTimeLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimeLocal.Location = new System.Drawing.Point(389, 527);
+            this.labelTimeLocal.Name = "labelTimeLocal";
+            this.labelTimeLocal.Size = new System.Drawing.Size(30, 13);
+            this.labelTimeLocal.TabIndex = 62;
+            this.labelTimeLocal.Text = "N/A";
+            // 
+            // DateZulu
+            // 
+            this.DateZulu.Location = new System.Drawing.Point(308, 503);
+            this.DateZulu.Name = "DateZulu";
+            this.DateZulu.Size = new System.Drawing.Size(72, 24);
+            this.DateZulu.TabIndex = 59;
+            this.DateZulu.Text = "Date (Zulu):";
+            this.DateZulu.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelDate
+            // 
+            this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.Location = new System.Drawing.Point(389, 503);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(120, 24);
+            this.labelDate.TabIndex = 60;
+            this.labelDate.Text = "N/A";
+            // 
+            // labelDataValid
+            // 
+            this.labelDataValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDataValid.Location = new System.Drawing.Point(124, 651);
+            this.labelDataValid.Name = "labelDataValid";
+            this.labelDataValid.Size = new System.Drawing.Size(184, 24);
+            this.labelDataValid.TabIndex = 58;
+            this.labelDataValid.Text = "N/A";
+            // 
+            // DataValid
+            // 
+            this.DataValid.AutoSize = true;
+            this.DataValid.Location = new System.Drawing.Point(53, 651);
+            this.DataValid.Name = "DataValid";
+            this.DataValid.Size = new System.Drawing.Size(59, 13);
+            this.DataValid.TabIndex = 57;
+            this.DataValid.Text = "Data Valid:";
+            // 
+            // labelVDOP
+            // 
+            this.labelVDOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVDOP.Location = new System.Drawing.Point(124, 627);
+            this.labelVDOP.Name = "labelVDOP";
+            this.labelVDOP.Size = new System.Drawing.Size(184, 24);
+            this.labelVDOP.TabIndex = 56;
+            this.labelVDOP.Text = "N/A";
+            // 
+            // VDOP
+            // 
+            this.VDOP.AutoSize = true;
+            this.VDOP.Location = new System.Drawing.Point(72, 627);
+            this.VDOP.Name = "VDOP";
+            this.VDOP.Size = new System.Drawing.Size(40, 13);
+            this.VDOP.TabIndex = 55;
+            this.VDOP.Text = "VDOP:";
+            // 
+            // labelHDOP
+            // 
+            this.labelHDOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHDOP.Location = new System.Drawing.Point(124, 602);
+            this.labelHDOP.Name = "labelHDOP";
+            this.labelHDOP.Size = new System.Drawing.Size(184, 24);
+            this.labelHDOP.TabIndex = 54;
+            this.labelHDOP.Text = "N/A";
+            // 
+            // HDOP
+            // 
+            this.HDOP.AutoSize = true;
+            this.HDOP.Location = new System.Drawing.Point(72, 602);
+            this.HDOP.Name = "HDOP";
+            this.HDOP.Size = new System.Drawing.Size(41, 13);
+            this.HDOP.TabIndex = 53;
+            this.HDOP.Text = "HDOP:";
+            // 
+            // labelPDOP
+            // 
+            this.labelPDOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPDOP.Location = new System.Drawing.Point(124, 575);
+            this.labelPDOP.Name = "labelPDOP";
+            this.labelPDOP.Size = new System.Drawing.Size(184, 24);
+            this.labelPDOP.TabIndex = 52;
+            this.labelPDOP.Text = "N/A";
+            // 
+            // PDOP
+            // 
+            this.PDOP.AutoSize = true;
+            this.PDOP.Location = new System.Drawing.Point(72, 575);
+            this.PDOP.Name = "PDOP";
+            this.PDOP.Size = new System.Drawing.Size(40, 13);
+            this.PDOP.TabIndex = 51;
+            this.PDOP.Text = "PDOP:";
+            // 
+            // labelFixMode
+            // 
+            this.labelFixMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFixMode.Location = new System.Drawing.Point(124, 551);
+            this.labelFixMode.Name = "labelFixMode";
+            this.labelFixMode.Size = new System.Drawing.Size(184, 24);
+            this.labelFixMode.TabIndex = 50;
+            this.labelFixMode.Text = "N/A";
+            // 
+            // FixMode
+            // 
+            this.FixMode.AutoSize = true;
+            this.FixMode.Location = new System.Drawing.Point(59, 551);
+            this.FixMode.Name = "FixMode";
+            this.FixMode.Size = new System.Drawing.Size(53, 13);
+            this.FixMode.TabIndex = 49;
+            this.FixMode.Text = "Fix Mode:";
+            // 
+            // listGPSQuality
+            // 
+            this.listGPSQuality.Enabled = false;
+            this.listGPSQuality.FormattingEnabled = true;
+            this.listGPSQuality.Items.AddRange(new object[] {
+            "Fix Not Available",
+            "GPS SPS Mode",
+            "Differential, GPS SPS Mode, FixValid",
+            "GPS PPSMode, Fix Valid"});
+            this.listGPSQuality.Location = new System.Drawing.Point(309, 553);
+            this.listGPSQuality.Name = "listGPSQuality";
+            this.listGPSQuality.Size = new System.Drawing.Size(231, 17);
+            this.listGPSQuality.TabIndex = 48;
+            // 
+            // labelLatitude
+            // 
+            this.labelLatitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLatitude.Location = new System.Drawing.Point(124, 479);
+            this.labelLatitude.Name = "labelLatitude";
+            this.labelLatitude.Size = new System.Drawing.Size(184, 24);
+            this.labelLatitude.TabIndex = 44;
+            this.labelLatitude.Text = "N/A";
+            // 
+            // Latitude
+            // 
+            this.Latitude.AutoSize = true;
+            this.Latitude.Location = new System.Drawing.Point(61, 479);
+            this.Latitude.Name = "Latitude";
+            this.Latitude.Size = new System.Drawing.Size(51, 13);
+            this.Latitude.TabIndex = 40;
+            this.Latitude.Text = "Latitude: ";
+            this.Latitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // Longitude
+            // 
+            this.Longitude.AutoSize = true;
+            this.Longitude.Location = new System.Drawing.Point(55, 503);
+            this.Longitude.Name = "Longitude";
+            this.Longitude.Size = new System.Drawing.Size(57, 13);
+            this.Longitude.TabIndex = 42;
+            this.Longitude.Text = "Longitude:";
+            this.Longitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelLongitude
+            // 
+            this.labelLongitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLongitude.Location = new System.Drawing.Point(124, 503);
+            this.labelLongitude.Name = "labelLongitude";
+            this.labelLongitude.Size = new System.Drawing.Size(184, 24);
+            this.labelLongitude.TabIndex = 47;
+            this.labelLongitude.Text = "N/A";
+            // 
+            // Altitude
+            // 
+            this.Altitude.AutoSize = true;
+            this.Altitude.Location = new System.Drawing.Point(67, 527);
+            this.Altitude.Name = "Altitude";
+            this.Altitude.Size = new System.Drawing.Size(45, 13);
+            this.Altitude.TabIndex = 41;
+            this.Altitude.Text = "Altitude:";
+            this.Altitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelAltitude
+            // 
+            this.labelAltitude.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAltitude.Location = new System.Drawing.Point(124, 527);
+            this.labelAltitude.Name = "labelAltitude";
+            this.labelAltitude.Size = new System.Drawing.Size(184, 24);
+            this.labelAltitude.TabIndex = 46;
+            this.labelAltitude.Text = "N/A";
+            // 
+            // TineZulu
+            // 
+            this.TineZulu.Location = new System.Drawing.Point(309, 479);
+            this.TineZulu.Name = "TineZulu";
+            this.TineZulu.Size = new System.Drawing.Size(72, 24);
+            this.TineZulu.TabIndex = 43;
+            this.TineZulu.Text = "Time (Zulu):";
+            this.TineZulu.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelTime
+            // 
+            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Location = new System.Drawing.Point(389, 479);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(120, 24);
+            this.labelTime.TabIndex = 45;
+            this.labelTime.Text = "N/A";
+            // 
+            // NMEAText
+            // 
+            this.NMEAText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.NMEAText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NMEAText.Location = new System.Drawing.Point(456, 289);
+            this.NMEAText.Multiline = true;
+            this.NMEAText.Name = "NMEAText";
+            this.NMEAText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.NMEAText.Size = new System.Drawing.Size(302, 173);
+            this.NMEAText.TabIndex = 63;
+            // 
+            // dumpRawDataCheck
+            // 
+            this.dumpRawDataCheck.Location = new System.Drawing.Point(456, 240);
+            this.dumpRawDataCheck.Name = "dumpRawDataCheck";
+            this.dumpRawDataCheck.Size = new System.Drawing.Size(240, 24);
+            this.dumpRawDataCheck.TabIndex = 64;
+            this.dumpRawDataCheck.Text = "Output NMEA data";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(654, 490);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 13);
+            this.label13.TabIndex = 66;
+            this.label13.Text = "Select a COM Port:";
+            // 
+            // COMlistBox
+            // 
+            this.COMlistBox.FormattingEnabled = true;
+            this.COMlistBox.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7",
+            "COM8"});
+            this.COMlistBox.Location = new System.Drawing.Point(655, 506);
+            this.COMlistBox.Name = "COMlistBox";
+            this.COMlistBox.Size = new System.Drawing.Size(136, 69);
+            this.COMlistBox.TabIndex = 65;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(444, 475);
+            this.ClientSize = new System.Drawing.Size(969, 702);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.COMlistBox);
+            this.Controls.Add(this.dumpRawDataCheck);
+            this.Controls.Add(this.NMEAText);
+            this.Controls.Add(this.LocalDateTime);
+            this.Controls.Add(this.labelTimeLocal);
+            this.Controls.Add(this.DateZulu);
+            this.Controls.Add(this.labelDate);
+            this.Controls.Add(this.labelDataValid);
+            this.Controls.Add(this.DataValid);
+            this.Controls.Add(this.labelVDOP);
+            this.Controls.Add(this.VDOP);
+            this.Controls.Add(this.labelHDOP);
+            this.Controls.Add(this.HDOP);
+            this.Controls.Add(this.labelPDOP);
+            this.Controls.Add(this.PDOP);
+            this.Controls.Add(this.labelFixMode);
+            this.Controls.Add(this.FixMode);
+            this.Controls.Add(this.listGPSQuality);
+            this.Controls.Add(this.labelLatitude);
+            this.Controls.Add(this.Latitude);
+            this.Controls.Add(this.Longitude);
+            this.Controls.Add(this.labelLongitude);
+            this.Controls.Add(this.Altitude);
+            this.Controls.Add(this.labelAltitude);
+            this.Controls.Add(this.TineZulu);
+            this.Controls.Add(this.labelTime);
+            this.Controls.Add(this.listSatellites);
+            this.Controls.Add(this.picSats);
             this.Controls.Add(this.textBoxRPM);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button_fast);
@@ -476,6 +860,7 @@ namespace PCComm
             this.GroupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSats)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,6 +905,42 @@ namespace PCComm
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboBaud;
         private System.Windows.Forms.TextBox textBoxRPM;
+        private System.Windows.Forms.PictureBox picSats;
+        private System.Windows.Forms.ListView listSatellites;
+        private System.Windows.Forms.ColumnHeader IdColumn;
+        private System.Windows.Forms.ColumnHeader ElevationColumn;
+        private System.Windows.Forms.ColumnHeader AzimuthColumn;
+        private System.Windows.Forms.ColumnHeader UsedColumn;
+        private System.Windows.Forms.Label LocalDateTime;
+        private System.Windows.Forms.Label labelTimeLocal;
+        private System.Windows.Forms.Label DateZulu;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Label labelDataValid;
+        private System.Windows.Forms.Label DataValid;
+        private System.Windows.Forms.Label labelVDOP;
+        private System.Windows.Forms.Label VDOP;
+        private System.Windows.Forms.Label labelHDOP;
+        private System.Windows.Forms.Label HDOP;
+        private System.Windows.Forms.Label labelPDOP;
+        private System.Windows.Forms.Label PDOP;
+        private System.Windows.Forms.Label labelFixMode;
+        private System.Windows.Forms.Label FixMode;
+        private System.Windows.Forms.ListBox listGPSQuality;
+        private System.Windows.Forms.Label labelLatitude;
+        private System.Windows.Forms.Label Latitude;
+        private System.Windows.Forms.Label Longitude;
+        private System.Windows.Forms.Label labelLongitude;
+        private System.Windows.Forms.Label Altitude;
+        private System.Windows.Forms.Label labelAltitude;
+        private System.Windows.Forms.Label TineZulu;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Timer timer2;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.TextBox NMEAText;
+        private System.Windows.Forms.CheckBox dumpRawDataCheck;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox COMlistBox;
+        private System.IO.Ports.SerialPort serialPort2;
        
     }
 }

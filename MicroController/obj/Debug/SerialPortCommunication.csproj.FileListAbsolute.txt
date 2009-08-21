@@ -25,3 +25,12 @@ C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_MCU\SerialPortCommunicat
 C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_MCU\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
 C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_MCU\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
 C:\Users\Ryan\Documents\Semester 8\143.485\Software\GUI_MCU\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\bin\Debug\SerialPortCommunication.exe.config
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\SerialPortCommunication.exe
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\SerialPortCommunication.pdb
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\bin\Debug\SerialPortCommunication.exe
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\PCComm.frmMain.resources
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\PCComm.Properties.Resources.resources
+C:\Users\Ryan\Documents\Semester 8\143.485\Software\MicroController\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache

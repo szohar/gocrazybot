@@ -41,14 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationManager.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="MCU\CommunicationManager.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="GPS\GPSStructs.cs" />
+    <Compile Include="GPS\Location.cs" />
+    <Compile Include="GPS\NMEAProtocol.cs" />
+    <Compile Include="GPS\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <SubType>Designer</SubType>
@@ -74,7 +78,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="GPS\Satellite.cs" />
+    <Compile Include="GPS\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GPS\GPS\GPS.csproj">
+      <Project>{32F8D83A-1113-4D31-868E-623AE253084D}</Project>
+      <Name>GPS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
